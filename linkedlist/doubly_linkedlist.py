@@ -23,25 +23,17 @@ class DoubleLinkedList:
 
   def print(self):
 
-    print(self.head.prev.val)
-
-    itr = self.head
+    itr = self.current
     ss = ""
-    while itr is not None:
+    while itr:
       ss += str(itr.val) + '->'
-      itr = itr.prev
+      itr = itr.next  
+    ss += "Null"
     print(ss)
     
-    # itr = self.head
-    # ss = ''
-    # while itr.prev:
-    #   ss += str(itr.val) + '->'
-    #   itr = itr.prev
-    # ss += "Null"
-    # print(ss)
+
 
 dbl = DoubleLinkedList()
-
 dbl.insert(2)
 dbl.insert(10)
 dbl.insert(90)
