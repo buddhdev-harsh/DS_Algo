@@ -38,6 +38,6 @@ class Binary_search:
 arr = [5, 6, 19, 41, 56, 77]
 bs  = Binary_search(arr, 5)
 
-print("Found at index:"+ str(bs.ans) if bs.ans is not False else "not found")
-# ind = bs.recursive( 0, len(arr)-1)
-# print("found at index:"+str(ind) if ind is not False else "Not Found")
+# print("Found at index:"+ str(bs.ans) if bs.ans is not False else "not found")
+ind = bs.recursive( 0, len(arr)-1)
+print("found at index:"+str(ind) if ind is not False else "Not Found")
