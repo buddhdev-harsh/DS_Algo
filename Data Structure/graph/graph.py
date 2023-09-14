@@ -31,7 +31,7 @@ class Graph:
 
     print(self.g_dict.values())
     return True
-  
+
 
 # graph dict
 gdict = {
@@ -55,3 +55,6 @@ graph.get_edges()
 graph.addVertex('k', ['a', 'c'])
 graph.get_edges()
 
+visited = set()
+graph.dfs('a', visited)
+print(visited)
