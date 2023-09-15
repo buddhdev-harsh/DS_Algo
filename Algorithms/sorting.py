@@ -70,27 +70,30 @@ class Sorting:
       arr[a] = arr[b]
       arr[b] = temp
 
-  def quicksort(self,arr, start, end):
-    if start < end:
-      pi = self.partition(arr, start, end)
-      self.quicksort(arr, start, pi-1)
-      self.quicksort(arr, pi+1, end)
 
-  def partition(self, arr, start, end):
+  def quickSort(self, arr, start, end):
     pivot_index = start
-    
-    while start < end:
-      while start < len(arr) and arr[start] < arr[pivot_index]:
-        start += 1
-      while end >= 0 and arr[end] > arr[pivot_index]:
-        end -= 1
+    pivot_element = arr[pivot_index]
 
+    while start < end:
+      while start < len(arr) and arr[start] < pivot_element:
+        start += 1
+      while end >= 0 and arr[end] > pivot_element:
+        end -= 1
+    
       if start < end:
         self.swap(start, end, arr)
-    
-    self.quicksort(arr, pivot_index, end)
-    
+
+    self.swap(pivot_index, end, arr)
     return end
+
+
+
+  def partition(self, arr, start, end):
+    if start < end:
+      pi = self.quickSort(arr, start, end)
+      self.partition(arr, start, pi-1)
+      self.partition(arr, pi+1, end)
 
 
     
