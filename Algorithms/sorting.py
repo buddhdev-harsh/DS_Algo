@@ -97,5 +97,5 @@ class Sorting:
 
 arr = [5, 2, 1, 8, 9]
 sort = Sorting()
-sort.partition(arr, 0, len(arr)-1)
+sort.merge(arr)
 print(arr)
