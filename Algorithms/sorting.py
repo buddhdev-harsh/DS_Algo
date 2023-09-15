@@ -63,6 +63,35 @@ class Sorting:
         j -= 1
 
       arr[j+1] = element
+  
+  def swap(self, a, b, arr):
+    if a != b:
+      temp = arr[a]
+      arr[a] = arr[b]
+      arr[b] = temp
+
+  def quicksort(self,arr, start, end):
+    if start < end:
+      pi = self.partition(arr, start, end)
+      self.quicksort(arr, start, pi-1)
+      self.quicksort(arr, pi+1, end)
+
+  def partition(self, arr, start, end):
+    pivot_index = start
+    
+    while start < end:
+      while start < len(arr) and arr[start] < arr[pivot_index]:
+        start += 1
+      while end >= 0 and arr[end] > arr[pivot_index]:
+        end -= 1
+
+      if start < end:
+        self.swap(start, end, arr)
+    
+    self.quicksort(arr, pivot_index, end)
+    
+    return end
+
 
     
 
